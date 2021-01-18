@@ -10,7 +10,7 @@ export default function Input2(props) {
     handleSelectChange(text.toLowerCase(), v);
   };
   const validate = (e) => {
-    if (e.target.value == "") {
+    if (e.target.value === "") {
       setErrorText("Please select an option");
     } else {
       setErrorText("");
@@ -43,7 +43,7 @@ export default function Input2(props) {
           );
         })}
       </select>
-      <div class="form-text text-danger">{errorText}</div>
+      <div className="form-text text-danger">{errorText}</div>
     </div>
   );
 }

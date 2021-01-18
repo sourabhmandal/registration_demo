@@ -50,18 +50,7 @@ export default class PersonalDetail extends React.Component {
     };
   }
 
-  handleGenderClass = () => {
-    if (this.state.genderClass === "btn text-primary px-3 _button") {
-      this.state.setState({
-        genderClass: "btn text-primary px-3 _active_button",
-      });
-    } else {
-      this.state.setState({ genderClass: "btn text-primary px-3 _button" });
-    }
-  };
-
   listStates = () => {
-    console.log("COUNTRY : " + this.props.values.country);
     if (this.props.values.country === "USA") {
       return this.state.usa;
     } else if (this.props.values.country === "India") {
@@ -74,6 +63,7 @@ export default class PersonalDetail extends React.Component {
       handleGender,
       nextStep,
       handleSelectChange,
+      values,
     } = this.props;
     return (
       <>
@@ -90,32 +80,29 @@ export default class PersonalDetail extends React.Component {
           <label className="mb-2">Gender</label>
           <br />
           <button
-            className={this.state.genderClass}
+            className="btn text-primary px-3 _active_button"
             type="button"
             onClick={(e) => {
               e.preventDefault();
               handleGender("male");
-              this.handleGenderClass();
             }}
           >
             <strong>Male</strong>
           </button>
           <button
-            className={this.state.genderClass}
+            className="btn text-primary px-3 _inactive_button"
             type="button"
             onClick={() => {
               handleGender("female");
-              this.handleGenderClass();
             }}
           >
             <strong>Female</strong>
           </button>
           <button
-            className={this.state.genderClass}
+            className="btn text-primary px-3 _inactive_button"
             type="button"
             onClick={() => {
               handleGender("others");
-              this.handleGenderClass();
             }}
           >
             <strong>Other</strong>
@@ -136,6 +123,7 @@ export default class PersonalDetail extends React.Component {
           countrycode="+91"
           label={"Phone no"}
           _onchange={handleChange("phone")}
+          _values={values}
         />
 
         <button

@@ -3,6 +3,7 @@ import Input1 from "./Input1";
 import img from "../assets/placeholder.png";
 export default function CompanyDetail(props) {
   const { handleChange, nextStep, prevStep } = props;
+
   return (
     <>
       <div className="col-12 mb-3">

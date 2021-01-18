@@ -16,7 +16,6 @@ export default class App extends React.Component {
       company: "",
       job: "",
       experience: 0,
-      otp: "",
     };
     this.prevStep = this.prevStep.bind(this);
     this.nextStep = this.nextStep.bind(this);
@@ -60,7 +59,6 @@ export default class App extends React.Component {
       company,
       job,
       experience,
-      otp,
     } = this.state;
     const values = {
       fullname,
@@ -71,7 +69,6 @@ export default class App extends React.Component {
       company,
       job,
       experience,
-      otp,
     };
     return (
       <div className="App">

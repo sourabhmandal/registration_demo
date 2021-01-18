@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function Input4(props) {
-  const { _for, _onchange, _type, _describedby, _placeholder, _value } = props;
+export default function Input4() {
   return (
     <div className="col-2">
       <input className="form-control p-4" />

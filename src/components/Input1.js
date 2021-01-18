@@ -38,7 +38,7 @@ export default function Input1(props) {
           placeholder={_placeholder}
           value={_value}
         />
-        <div id={_describedby} class="form-text text-danger">
+        <div id={_describedby} className="form-text text-danger">
           {errorText}
         </div>
       </div>

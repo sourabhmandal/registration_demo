@@ -31,6 +31,7 @@ export default function Form(props) {
                 values={values}
                 handleGender={handleGender}
                 handleSelectChange={handleSelectChange}
+                values={values}
               />
             </form>
             <p className="col-12 text-center my-3">

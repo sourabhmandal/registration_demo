@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Input3(props) {
-  const { countrycode, label, _onchange } = props;
+  const { countrycode, label, _onchange, _values } = props;
 
+  const [errorText, setErrorText] = useState("");
   const validate = (e) => {
-    if (e.target.value == "") {
+    if (e.target.value === "") {
       setErrorText("Please enter your phone number");
-    } else if (e.target.value.lenght() !== 10) {
-      setErrorText("Please enter a 10 digit number");
     } else if (!e.target.value.match(/^[0-9]+$/)) {
       setErrorText("Phone number must contain only Digits 0-9");
+    } else if (e.target.value.length !== 10) {
+      setErrorText("Please enter a 10 digit number");
     } else {
       setErrorText("");
     }
@@ -33,6 +34,7 @@ export default function Input3(props) {
           onChange={validate}
         />
       </div>
+      <div className="form-text text-danger">{errorText}</div>
     </div>
   );
 }
