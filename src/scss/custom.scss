@@ -1,0 +1,58 @@
+// Your variable overrides
+$body-bg: #eff5ff;
+$secondary: #f3f3f3;
+$primary: #ff6f2d;
+$danger: #ff4136;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger,
+);
+
+._active_button {
+  background-color: #ffe7d9 !important;
+  margin-right: 1rem;
+  border-color: rgb(233, 233, 233) !important;
+  min-width: 5rem;
+}
+._button {
+  background-color: #ffffff !important;
+  margin-right: 1rem;
+  border-color: rgb(233, 233, 233) !important;
+  min-width: 5rem;
+}
+
+._button_secondary {
+  background-color: #e9e9e9 !important;
+  margin-right: 1rem;
+}
+.bg_navyblue {
+  background-color: #3a5874;
+}
+
+.step_active {
+  background-color: rgb(255, 115, 0);
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding-left: 0.9rem;
+  padding-top: 0.4rem;
+}
+
+.step_inactive {
+  background-color: #31405e;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding-left: 0.9rem;
+  padding-top: 0.4rem;
+}
+a {
+  text-decoration: none !important;
+}
+
+.white_text_muted {
+  color: #cfcfcf;
+}
+// Required
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
