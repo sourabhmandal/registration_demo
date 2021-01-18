@@ -2,7 +2,7 @@ import React from "react";
 import Input4 from "./Input4";
 
 export default function OtpDetail(props) {
-  const { prevStep, values } = props;
+  const { prevStep, values, nextStep } = props;
 
   return (
     <>
@@ -28,6 +28,7 @@ export default function OtpDetail(props) {
                 "fullname : " + values.fullname,
                 JSON.stringify(values)
               );
+              nextStep();
             }}
           >
             <strong>Verify</strong>

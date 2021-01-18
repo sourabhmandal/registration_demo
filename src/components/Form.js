@@ -3,6 +3,7 @@ import PersonalDetail from "./PersonalDetail";
 import CompanyDetail from "./CompanyDetail";
 import OtpDetail from "./OtpDetail";
 import HeadText from "./HeadText";
+import Success from "./Success";
 
 export default function Form(props) {
   const {
@@ -94,6 +95,6 @@ export default function Form(props) {
         </>
       );
     default:
-      return <h1>Nothing</h1>;
+      return <Success />;
   }
 }
