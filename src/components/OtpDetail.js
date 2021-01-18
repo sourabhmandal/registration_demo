@@ -2,7 +2,8 @@ import React from "react";
 import Input4 from "./Input4";
 
 export default function OtpDetail(props) {
-  const { prevStep } = props;
+  const { prevStep, values } = props;
+
   return (
     <>
       <label for={"_for"} className="form-label">
@@ -19,7 +20,16 @@ export default function OtpDetail(props) {
           <button className="btn _button_secondary col-2" onClick={prevStep}>
             <strong>Back</strong>
           </button>
-          <button className="btn btn-primary text-white col-9" onClick="">
+          <button
+            className="btn btn-primary text-white col-9"
+            onClick={(e) => {
+              e.preventDefault();
+              localStorage.setItem(
+                "fullname : " + values.fullname,
+                JSON.stringify(values)
+              );
+            }}
+          >
             <strong>Verify</strong>
           </button>
         </div>

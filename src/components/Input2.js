@@ -3,21 +3,31 @@ import React, { useState } from "react";
 export default function Input2(props) {
   const { vars, text, handleSelectChange } = props;
   const [value, setValue] = useState("India");
+  const [errorText, setErrorText] = useState("");
 
   const handleChanges = (v) => {
     setValue(v.target.value);
     handleSelectChange(text.toLowerCase(), v);
   };
+  const validate = (e) => {
+    if (e.target.value == "") {
+      setErrorText("Please select an option");
+    } else {
+      setErrorText("");
+    }
+    handleChanges(e);
+  };
+
   return (
     <div className="mb-3">
-      <label for="exampleInputEmail1" className="form-label">
+      <label htmlFor="exampleInputEmail1" className="form-label">
         {text}
       </label>
       <select
-        class="form-select"
+        className="form-select"
         aria-label="Default select example"
         value={value}
-        onChange={handleChanges}
+        onChange={validate}
       >
         {vars.map((c) => {
           return (
@@ -26,12 +36,14 @@ export default function Input2(props) {
               onChange={() => {
                 setValue(c);
               }}
+              key={c}
             >
               {c}
             </option>
           );
         })}
       </select>
+      <div class="form-text text-danger">{errorText}</div>
     </div>
   );
 }

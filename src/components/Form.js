@@ -76,6 +76,7 @@ export default function Form(props) {
                 nextStep={nextStep}
                 prevStep={prevStep}
                 handleChange={handleChange}
+                values={values}
               />
             </form>
             <hr style={{ width: "100%" }} />

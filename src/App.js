@@ -48,6 +48,7 @@ export default class App extends React.Component {
   handleGender = (gen) => {
     this.setState({ gender: gen });
   };
+
   render() {
     const {
       step,
@@ -75,9 +76,24 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <div className="container-fluid py-3 bg_navyblue d-flex justify-content-center">
-          <NavSteps text="Personal Detail" step={step} count="1" />
-          <NavSteps text="Personal Detail" step={step} count="2" />
-          <NavSteps text="Personal Detail" step={step} count="3" />
+          <NavSteps
+            text="Personal Detail"
+            step={step}
+            count="1"
+            changeStep={this.changeStep}
+          />
+          <NavSteps
+            text="Personal Detail"
+            step={step}
+            count="2"
+            changeStep={this.changeStep}
+          />
+          <NavSteps
+            text="Personal Detail"
+            step={step}
+            count="3"
+            changeStep={this.changeStep}
+          />
         </div>
         <div className="container-fluid">
           <div className="row justify-content-center">
